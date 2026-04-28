@@ -5,7 +5,7 @@ export const fetchDashboard = createAsyncThunk(
     "/dash/fetchDashboard",
     async(__,{rejectWithValue}) =>{
         try{
-            const res = await API.get("/dashboard/dashboard")
+            const res = await API.get("/dash/dashboard")
             return res.data;
         }catch(err){
             return rejectWithValue(err.response?.data || err.message)
@@ -18,7 +18,7 @@ export const fetchRecentAttempts = createAsyncThunk(
   "dashboard/recentAttempts",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await API.get("/dashboard/attempts");
+      const res = await API.get("/dash/attempts");
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || err.message);
